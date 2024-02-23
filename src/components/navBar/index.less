@@ -1,0 +1,68 @@
+@import url('@common/common.less');
+.comp-nav-bar {
+    background: transparent;
+    &.comp-nav-bar-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+    }
+    .nav-bar-box {
+        width: 100vw;
+        height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    .nav-bar-left {
+        display: flex;
+        align-items: center;
+    }
+    .nav-left-back {
+        width: 48rpx;
+        height: 48rpx;
+        margin-right: 8rpx;
+    }
+    .nav-left-home {
+        width: 48rpx;
+        height: 48rpx;
+        margin-right: 8rpx;
+        background: #00f;
+    }
+    .nav-left-content {
+        font-size: 40rpx;
+        font-weight: bold;
+    }
+    .nav-left-content2 {
+        padding-left: 32rpx;
+    }
+
+    // 浅色主题
+    .nav-light {
+        .nav-left-back {
+            width: 80rpx;
+            height: 88rpx;
+            background: url('@{img}nav_white_arrows.png') no-repeat;
+            background-size: cover;
+        }
+        .nav-left-home {
+        }
+        .nav-left-content {
+            color: #fff;
+        }
+    }
+
+    // 深色主题
+    .nav-dark {
+        .nav-left-back {
+            width: 80rpx;
+            height: 88rpx;
+            background: url('@{img}nav_black_arrows.png') no-repeat;
+            background-size: cover;
+        }
+        .nav-left-home {
+        }
+        .nav-left-content {
+            color: #131415;
+        }
+    }
+}

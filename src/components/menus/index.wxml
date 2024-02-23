@@ -1,0 +1,9 @@
+<view class="comp-menus">
+    <view class="menu-bar">
+        <view class="menu-item {{index === current ? 'menu-item-on' : ''}}" wx:for="{{menu}}" wx:key="label"
+            bind:tap="handleClick" data-item="{{item}}">
+            <view class="icon icon-{{item.icon}}"></view>
+            <view class="txt">{{item.label}}</view>
+        </view>
+    </view>
+</view>

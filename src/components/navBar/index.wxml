@@ -1,0 +1,10 @@
+<view class="comp-nav-bar {{fixed ? 'comp-nav-bar-fixed' : ''}}" style="z-index:{{zIndex}};background:{{barBg}};">
+    <view class="nav-bar-box nav-{{theme}}" style="padding-top: {{statusBarHeight}}px;">
+        <view wx:if="{{!isCustom}}" class="nav-bar-left" bind:tap="handleBack">
+            <view wx:if="{{showBack}}" class="nav-left-back"></view>
+            <!-- <view wx:else class="nav-left-home"></view> -->
+            <view wx:if="{{title}}" class="nav-left-content {{showBack ? '' : 'nav-left-content2'}}">{{title}}</view>
+        </view>
+        <slot></slot>
+    </view>
+</view>
