@@ -3,7 +3,6 @@ const { src, dest, series, parallel, watch } = pkg;
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
-import { execa } from 'execa';
 import { deleteAsync } from 'del';
 import through2 from 'through2';
 import alias from 'gulp-wechat-weapp-src-alisa';
@@ -20,6 +19,9 @@ import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
 import cleancss from 'gulp-clean-css';
 import uglify from 'gulp-uglify';
+import mpNpm from 'gulp-mp-npm';
+import gulpTs from 'gulp-typescript';
+const tsProject = gulpTs.createProject('tsconfig.json');
 
 const isProduction = (process.env.NODE_ENV || 'dev') !== 'dev';
 
@@ -27,10 +29,10 @@ const DIST = './dist';
 
 // 源文件目录
 const filePath = {
-  jsPath: ['src/**/*.js', '!src/config/*.js'],
+  jsPath: ['src/**/*.ts', '!src/config/*.ts', 'src/*.ts'],
   wxmlPath: ['src/**/*.xml', 'src/**/*.wxml'],
   cssPath: ['src/**/*.less', 'src/**/*.wxss'],
-  jsonPath: ['src/**/*.json'],
+  jsonPath: ['src/**/*.json', 'src/*.json'],
   wxsPath: ['src/**/*.wxs'],
   configPath: isProduction ? 'src/config/config.js' : 'src/config/config.dev.js',
   projectJsonPath: isProduction ? (fs.existsSync('online.config.json') ? 'online.config.json' : 'project.config.json') : fs.existsSync('dev.config.json') ? 'dev.config.json' : 'project.config.dev.json',
@@ -128,13 +130,15 @@ function config() {
 
 // js编译
 function js() {
-  return src(filePath.jsPath[0], { allowEmpty: true })
+  return src(filePath.jsPath, { allowEmpty: true })
+    .pipe(tsProject())
     .pipe(
       alias({
         '@utils': aliasConfig['@utils'],
         '@components': aliasConfig['@components'],
       })
     )
+    .pipe(mpNpm())
     .pipe(plumber(onError))
     .pipe(changed(DIST))
     .pipe(babel())
@@ -228,5 +232,4 @@ const watchs = series(buildTasks, watcher);
 export { watchs as watch };
 
 // 默认任务 (清理 + 编译 + 打开工具 + 监听)
-const defaultTask = series(clean, buildTasks);
-export default defaultTask;
+export default clean;

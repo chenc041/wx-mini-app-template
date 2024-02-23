@@ -1,5 +1,0 @@
-<view class="comp-copyright {{isFixed ? 'comp-copyright-fixed' : ''}}"
-    style="height: {{height}}rpx;margin-top:{{top}}rpx;">
-    <view class="txt">文聚禾 四川省天府文化之家官方平台</view>
-    <View class="txt">Copyright © 2024 成都市文化产权交易所 All Right Reserved</View>
-</view>

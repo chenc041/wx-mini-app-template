@@ -1,4 +1,3 @@
-import request from '@utils/request';
 import store from '@utils/store';
 import User from '@utils/user';
 
@@ -10,7 +9,7 @@ const getNavHeight = () => {
 };
 
 // 获取经纬度
-const getLocation = (cb) => {
+const getLocation = (cb?: Function) => {
   let latAndlon = store.getItem('_latAndlon');
   if (latAndlon?.latitude && latAndlon?.longitude) {
     cb && cb(latAndlon.latitude, latAndlon.longitude);
@@ -40,12 +39,12 @@ const getLocation = (cb) => {
   });
 };
 
-const zero = (v) => {
+const zero = (v: number) => {
   return v < 10 ? `0${v}` : v;
 };
 
 // 日期范围处理
-const dealTimeRange = (val) => {
+const dealTimeRange = (val: number) => {
   let start = '';
   let end = '';
 
@@ -77,7 +76,7 @@ const dealTimeRange = (val) => {
  * @param operate {string} 计算方法，加(add) 减(subtract) 乘(multiply) 除(divide)
  * @returns number 计算值
  */
-const getNumberAccuracy = (a, b, operate) => {
+const getNumberAccuracy = (a: number, b: number, operate: 'add' | 'subtract' | 'multiply' | 'divide') => {
   a = Number(a);
   b = Number(b);
 
@@ -93,7 +92,7 @@ const getNumberAccuracy = (a, b, operate) => {
    * @param floatNum {number} 小数
    * @return {object} {times:100, num: 314}
    */
-  const toInteger = (floatNum) => {
+  const toInteger = (floatNum: number) => {
     var ret = { times: 1, num: 0 };
     if (isInteger(floatNum)) {
       ret.num = floatNum;
@@ -113,7 +112,7 @@ const getNumberAccuracy = (a, b, operate) => {
    * 加减乘除运算，确保不丢失精度
    * 把小数放大为整数（乘），进行算术运算，再缩小为小数（除）
    */
-  const operation = (a, b) => {
+  const operation = (a: number, b: number) => {
     var o1 = toInteger(a);
     var o2 = toInteger(b);
     var n1 = o1.num;
@@ -121,7 +120,7 @@ const getNumberAccuracy = (a, b, operate) => {
     var t1 = o1.times;
     var t2 = o2.times;
     var max = t1 > t2 ? t1 : t2;
-    var result = null;
+    var result;
     switch (operate) {
       case 'add':
         if (t1 === t2) {
@@ -159,9 +158,6 @@ const getNumberAccuracy = (a, b, operate) => {
 const WJH = {
   getNavHeight,
   getLocation,
-  dealCommunityUser,
-  dealActivityList,
-  addActivicy,
   dealTimeRange,
   getNumberAccuracy,
   ...User,

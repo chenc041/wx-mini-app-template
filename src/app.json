@@ -1,9 +1,6 @@
 {
   "pages": ["pages/home/index"],
   "requiredPrivateInfos": ["getLocation"],
-  "window": {
-    "navigationStyle": "custom"
-  },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "permission": {

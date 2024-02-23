@@ -4,18 +4,22 @@
   "description": "小程序基础模板",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev gulp watch",
+    "init": "cross-env NODE_ENV=dev gulp",
+    "watch": "cross-env NODE_ENV=dev gulp watch",
+    "start": "pnpm run init && pnpm run watch",
     "build": "cross-env NODE_ENV=production gulp",
     "build:watch": "cross-env NODE_ENV=production gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "git@gitee.com:chenc041/wen-juhe.git"
+    "url": "git@github.com:chenc041/wx-mini-app-template.git"
   },
-  "author": "",
+  "author": "chenc",
   "license": "ISC",
   "type": "module",
-  "dependencies": {},
+  "dependencies": {
+    "dayjs": "^1.11.10"
+  },
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "chalk": "^5.3.0",
@@ -32,14 +36,18 @@
     "gulp-if": "^3.0.0",
     "gulp-jsonminify": "^1.1.0",
     "gulp-less": "^5.0.0",
+    "gulp-mp-npm": "^1.10.4",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-sourcemaps": "^3.0.0",
+    "gulp-typescript": "6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
     "gulp-wechat-weapp-src-alisa": "^1.0.6",
+    "miniprogram-api-typings": "^3.12.2",
     "path": "^0.12.7",
-    "through2": "^4.0.2"
+    "through2": "^4.0.2",
+    "typescript": "^5.3.3"
   }
 }

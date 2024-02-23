@@ -1,6 +1,3 @@
-<view class="pageAbout">
-    <nav-bar title="关于文聚禾" barBg="#2fc178" />
-    <view class="infos">
-        <view class="txt">文聚禾是四川省天府文化之家官方平台</view>
-    </view>
+<view class="pageHome">
+    <view class="txt">小程序基础模板</view>
 </view>

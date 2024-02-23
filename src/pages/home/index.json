@@ -1,5 +1,7 @@
 {
-    "usingComponents": {
-        "nav-bar": "@components/navBar/index"
-    }
+  "usingComponents": {},
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTitleText": "小程序模板",
+  "navigationBarTextStyle": "black"
 }

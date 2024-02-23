@@ -1,16 +1,16 @@
-import request from '@/request';
+import request from '@utils/request';
 import config from '@/config/config';
 
-const getOssToken = async (cb) => {
-  request({
+const getOssToken = async (cb?: Function) => {
+  const [err, data] = await request({
     url: '/api/v1/wx-user/ossMpToken',
-    success: (res) => {
-      cb && cb(res);
-    },
   });
+  if (!err) {
+    cb && cb(data);
+  }
 };
 
-const upload = (scene = 'img', success) => {
+const upload = (scene = 'img', success?: Function) => {
   wx.chooseMedia({
     count: 1,
     mediaType: ['image'],
@@ -18,7 +18,7 @@ const upload = (scene = 'img', success) => {
     success(resp) {
       let tempFilePath = resp.tempFiles[0].tempFilePath;
 
-      getOssToken((oss) => {
+      getOssToken((oss: any) => {
         let key = `wjh-app/${scene}/${+new Date()}-${Math.floor(Math.random() * +new Date())}`;
 
         wx.uploadFile({
