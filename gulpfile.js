@@ -30,8 +30,8 @@ const DIST = './dist';
 // 源文件目录
 const filePath = {
   jsPath: ['src/**/*.ts', '!src/config/*.ts', 'src/*.ts'],
-  wxmlPath: ['src/**/*.xml', 'src/**/*.wxml'],
-  cssPath: ['src/**/*.less', 'src/**/*.wxss', 'src/**/**/*.less'],
+  wxmlPath: ['src/**/*.wxml', 'src/**/*.xml'],
+  cssPath: ['src/**/*.less', 'src/**/*.wxss'],
   jsonPath: ['src/**/*.json', 'src/*.json'],
   wxsPath: ['src/**/*.wxs'],
   configPath: isProduction ? 'src/config/config.js' : 'src/config/config.dev.js',
@@ -84,7 +84,7 @@ const miniWxml = function () {
 function wxml() {
   return src(filePath.wxmlPath)
     .pipe(miniWxml())
-    .pipe(changed(DIST, { extension: '.wxml' }))
+    .pipe(changed(filePath.wxmlPath[0], { extension: '.wxml' }))
     .pipe(rename({ extname: '.wxml' }))
     .pipe(dest(DIST));
 }
@@ -93,7 +93,7 @@ function wxml() {
 function wxss() {
   return (
     src(filePath.cssPath, { base: 'src/' })
-      .pipe(changed(DIST, { extension: '.wxss' }))
+      .pipe(changed(filePath.cssPath[0], { extension: '.wxss' }))
       // .pipe(gulpIf(!isProduction, sourcemaps.init()))
       .pipe(
         alias({
@@ -123,7 +123,7 @@ function config() {
     .pipe(plumber(onError))
     .pipe(gulpIf(!isProduction, sourcemaps.init()))
     .pipe(rename({ basename: 'config' }))
-    .pipe(changed(DIST))
+    .pipe(changed(filePath.configPath[0]))
     .pipe(babel())
     .pipe(dest(DIST));
 }
@@ -140,7 +140,7 @@ function js() {
     )
     .pipe(mpNpm())
     .pipe(plumber(onError))
-    .pipe(changed(DIST))
+    .pipe(changed(filePath.jsPath[0]))
     .pipe(babel())
     .pipe(gulpIf(isProduction, uglify()))
     .pipe(gulpIf(!isProduction, sourcemaps.write()))
@@ -158,7 +158,7 @@ function json() {
         '@utils': aliasConfig['@utils'],
       })
     )
-    .pipe(changed(DIST))
+    .pipe(changed(filePath.jsonPath[0]))
     .pipe(
       gulpIf((file) => {
         return !/project\.config/g.test(String(file.path));
@@ -171,7 +171,7 @@ function json() {
 function wxs() {
   return src(filePath.wxsPath)
     .pipe(plumber(onError))
-    .pipe(changed(DIST))
+    .pipe(changed(filePath.wxsPath[0]))
     .pipe(babel())
     .pipe(rename({ extname: '.wxs' }))
     .pipe(dest(DIST));
