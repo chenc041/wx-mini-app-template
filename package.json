@@ -4,9 +4,8 @@
   "description": "小程序基础模板",
   "main": "index.js",
   "scripts": {
-    "init": "cross-env NODE_ENV=dev gulp",
     "watch": "cross-env NODE_ENV=dev gulp watch",
-    "start": "pnpm run init && pnpm run watch",
+    "start": "pnpm run watch",
     "build": "cross-env NODE_ENV=production gulp",
     "build:watch": "cross-env NODE_ENV=production gulp watch"
   },

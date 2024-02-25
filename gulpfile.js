@@ -31,7 +31,7 @@ const DIST = './dist';
 const filePath = {
   jsPath: ['src/**/*.ts', '!src/config/*.ts', 'src/*.ts'],
   wxmlPath: ['src/**/*.xml', 'src/**/*.wxml'],
-  cssPath: ['src/**/*.less', 'src/**/*.wxss'],
+  cssPath: ['src/**/*.less', 'src/**/*.wxss', 'src/**/**/*.less'],
   jsonPath: ['src/**/*.json', 'src/*.json'],
   wxsPath: ['src/**/*.wxs'],
   configPath: isProduction ? 'src/config/config.js' : 'src/config/config.dev.js',
