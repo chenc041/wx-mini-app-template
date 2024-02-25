@@ -1,4 +1,3 @@
 <view class="comp-noData">
-    <view class="icon"></view>
     <view class="txt">{{txt}}</view>
 </view>
