@@ -4,5 +4,6 @@
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTitleText": "小程序模板",
   "navigationBarTextStyle": "black",
-  "componentFramework": "glass-easel"
+  "componentFramework": "glass-easel",
+  "navigationStyle": "custom"
 }
