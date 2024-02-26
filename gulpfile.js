@@ -21,6 +21,7 @@ import cleancss from 'gulp-clean-css';
 import uglify from 'gulp-uglify';
 import mpNpm from 'gulp-mp-npm';
 import gulpTs from 'gulp-typescript';
+import * as ci from 'miniprogram-ci';
 const tsProject = gulpTs.createProject('tsconfig.json');
 
 const isProduction = (process.env.NODE_ENV || 'dev') !== 'dev';
@@ -177,6 +178,14 @@ function wxs() {
     .pipe(dest(DIST));
 }
 
+// 构建组件库
+async function npmBuild() {
+  await ci.default.packNpmManually({
+    packageJsonPath: './package.json',
+    miniprogramNpmDistDir: './dist',
+  });
+}
+
 // 清除编译结果目录
 function clean() {
   return deleteAsync([DIST]);
@@ -224,7 +233,7 @@ function watcher(callback) {
 }
 
 // 代码编译
-const buildTasks = series(parallel(config, js, json, wxml, wxss, wxs));
+const buildTasks = series(parallel(config, js, json, wxml, wxss, wxs, npmBuild));
 
 // 再次编译（如果开发者工具已经打开，并且不需要清除编译结果，可用此命令，速度极快）
 // const watchs = series(buildTasks, openTool, watcher);

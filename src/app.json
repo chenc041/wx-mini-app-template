@@ -15,7 +15,8 @@
     }
   },
   "usingComponents": {
-    "empty": "@components/empty"
+    "empty": "@components/empty",
+    "van-button": "@vant/weapp/button/index"
   },
   "lazyCodeLoading": "requiredComponents"
 }
