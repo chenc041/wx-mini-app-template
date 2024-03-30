@@ -27,7 +27,7 @@
     "del": "^7.1.0",
     "execa": "^8.0.1",
     "fs": "^0.0.1-security",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-base64": "^0.1.3",
