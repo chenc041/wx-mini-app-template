@@ -78,7 +78,7 @@ devDependencies:
     version: 3.0.0
   gulp-typescript:
     specifier: 6.0.0-alpha.1
-    version: 6.0.0-alpha.1(typescript@5.4.3)
+    version: 6.0.0-alpha.1(typescript@5.4.4)
   gulp-uglify:
     specifier: ^3.0.2
     version: 3.0.2
@@ -99,7 +99,7 @@ devDependencies:
     version: 4.0.2
   typescript:
     specifier: ^5.3.3
-    version: 5.4.3
+    version: 5.4.4
 
 packages:
 
@@ -5049,7 +5049,7 @@ packages:
       - supports-color
     dev: true
 
-  /gulp-typescript@6.0.0-alpha.1(typescript@5.4.3):
+  /gulp-typescript@6.0.0-alpha.1(typescript@5.4.4):
     resolution: {integrity: sha512-KoT0TTfjfT7w3JItHkgFH1T/zK4oXWC+a8xxKfniRfVcA0Fa1bKrIhztYelYmb+95RB80OLMBreknYkdwzdi2Q==}
     engines: {node: '>= 8'}
     peerDependencies:
@@ -5059,7 +5059,7 @@ packages:
       plugin-error: 1.0.1
       source-map: 0.7.4
       through2: 3.0.2
-      typescript: 5.4.3
+      typescript: 5.4.4
       vinyl: 2.2.1
       vinyl-fs: 3.0.3
     dev: true
@@ -8267,8 +8267,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+  /typescript@5.4.4:
+    resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
