@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@vant/weapp':
     specifier: ^1.11.4
-    version: 1.11.4
+    version: 1.11.5
   dayjs:
     specifier: ^1.11.10
     version: 1.11.10
@@ -2078,8 +2078,8 @@ packages:
       eslint-visitor-keys: 2.1.0
     dev: true
 
-  /@vant/weapp@1.11.4:
-    resolution: {integrity: sha512-egOsWO4hVMP1SQSqQ46jy8UD3WysvlnUecRzPM21Y3ovkOFZ6wlaO7oHQmTXRpwr+V41Qri1qEbtNjhVxFqdyw==}
+  /@vant/weapp@1.11.5:
+    resolution: {integrity: sha512-F/yebMtysTaDrqpCyk6AdQrY3lDB7y5TXNwHtBarxtL2NZzoH+D6pBwz9nY+d0vCin0w0IH9kDF57yb/BP3mNA==}
     dev: false
 
   /@vue/reactivity@3.0.5:
