@@ -45,7 +45,7 @@
     "gulp-typescript": "6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
     "gulp-wechat-weapp-src-alisa": "^1.0.6",
-    "miniprogram-api-typings": "^3.12.2",
+    "miniprogram-api-typings": "^4.0.0",
     "miniprogram-ci": "^1.9.10",
     "path": "^0.12.7",
     "through2": "^4.0.2",

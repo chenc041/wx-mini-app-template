@@ -86,8 +86,8 @@ devDependencies:
     specifier: ^1.0.6
     version: 1.0.6
   miniprogram-api-typings:
-    specifier: ^3.12.2
-    version: 3.12.2
+    specifier: ^4.0.0
+    version: 4.1.2
   miniprogram-ci:
     specifier: ^1.9.10
     version: 1.9.15
@@ -6188,8 +6188,8 @@ packages:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
-  /miniprogram-api-typings@3.12.2:
-    resolution: {integrity: sha512-OJB2uVAfhycX4teG/zEVpoThushQqLOx946XACDpVc6OQydiJWjn7djVzvNCbv0VOA7sbHGPQp/RkXD9vMCDEw==}
+  /miniprogram-api-typings@4.1.2:
+    resolution: {integrity: sha512-VmIgxal0GU3nHwsH2UNaRh8jNHG/kauG08Z4W/qiJ1Iubvme48aE+q3grpT9ZLBArMKmSuKlsTq+uPPHSGr0rA==}
     dev: true
 
   /miniprogram-ci@1.9.15:
