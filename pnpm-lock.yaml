@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^1.10.4
     version: 1.10.4(gulp@5.0.0)
   gulp-notify:
-    specifier: ^4.0.0
-    version: 4.0.0
+    specifier: ^5.0.0
+    version: 5.0.0
   gulp-plumber:
     specifier: ^1.2.1
     version: 1.2.1
@@ -4367,6 +4367,13 @@ packages:
       time-stamp: 1.1.0
     dev: true
 
+  /fancy-log@2.0.0:
+    resolution: {integrity: sha512-9CzxZbACXMUXW13tS0tI8XsGGmxWzO2DmYrGuBJOJ8k8q2K7hwfJA5qHjuPPe8wtsco33YR9wc+Rlr5wYFvhSA==}
+    engines: {node: '>=10.13.0'}
+    dependencies:
+      color-support: 1.1.3
+    dev: true
+
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
@@ -4829,7 +4836,7 @@ packages:
     dev: true
 
   /growly@1.3.0:
-    resolution: {integrity: sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=}
+    resolution: {integrity: sha512-+xGQY0YyAWCnqy7Cd++hc2JqMYzlm0dG30Jd0beaA64sROr8C4nt8Yc9V5Ro3avlSUDTN0ulqP/VBKi1/lLygw==}
     dev: true
 
   /gulp-autoprefixer@9.0.0(gulp@5.0.0):
@@ -4973,16 +4980,16 @@ packages:
       - supports-color
     dev: true
 
-  /gulp-notify@4.0.0:
-    resolution: {integrity: sha512-0cdDvZkHVqu4tqrcOI/jL5YdxYEIPQ7+p3YxnO48w5hhPSisvogZ887qL+fpYItg9m4MUhJ5Se8p8xGy3uJESA==}
-    engines: {node: '>=0.8.0', npm: '>=1.2.10'}
+  /gulp-notify@5.0.0:
+    resolution: {integrity: sha512-7ib3qN7lbEbrOjH9zU6Uh2RLrTBEGlSWWXqStSAGG6TwYC2WFur180iDR8LZv106gW4/b3PY+kW4DQaJkD/vpA==}
+    engines: {node: '>=18.0.0'}
     dependencies:
       ansi-colors: 4.1.3
-      fancy-log: 1.3.3
-      lodash.template: 4.5.0
-      node-notifier: 9.0.1
+      fancy-log: 2.0.0
+      lodash: 4.17.21
+      node-notifier: 10.0.1
       node.extend: 2.0.3
-      plugin-error: 1.0.1
+      plugin-error: 2.0.1
       through2: 4.0.2
     dev: true
 
@@ -5996,24 +6003,11 @@ packages:
       lodash.templatesettings: 3.1.1
     dev: true
 
-  /lodash.template@4.5.0:
-    resolution: {integrity: sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==}
-    dependencies:
-      lodash._reinterpolate: 3.0.0
-      lodash.templatesettings: 4.2.0
-    dev: true
-
   /lodash.templatesettings@3.1.1:
     resolution: {integrity: sha1-+zB4RHU7Zrnxr6VOJix0UwfbqOU=}
     dependencies:
       lodash._reinterpolate: 3.0.0
       lodash.escape: 3.2.0
-    dev: true
-
-  /lodash.templatesettings@4.2.0:
-    resolution: {integrity: sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==}
-    dependencies:
-      lodash._reinterpolate: 3.0.0
     dev: true
 
   /lodash.uniq@4.5.0:
@@ -6340,8 +6334,8 @@ packages:
       lower-case: 1.1.4
     dev: true
 
-  /node-notifier@9.0.1:
-    resolution: {integrity: sha512-fPNFIp2hF/Dq7qLDzSg4vZ0J4e9v60gJR+Qx7RbjbWqzPDdEqeVpEx5CFeDAELIl+A/woaaNn1fQ5nEVerMxJg==}
+  /node-notifier@10.0.1:
+    resolution: {integrity: sha512-YX7TSyDukOZ0g+gmzjB6abKu+hTGvO8+8+gIFDsRCU2t8fLV/P2unmt+LGFaIa4y64aX98Qksa97rgz4vMNeLQ==}
     dependencies:
       growly: 1.3.0
       is-wsl: 2.2.0
@@ -6779,6 +6773,13 @@ packages:
       arr-diff: 4.0.0
       arr-union: 3.1.0
       extend-shallow: 3.0.2
+    dev: true
+
+  /plugin-error@2.0.1:
+    resolution: {integrity: sha512-zMakqvIDyY40xHOvzXka0kUvf40nYIuwRE8dWhti2WtjQZ31xAgBZBhxsK7vK3QbRXS1Xms/LO7B5cuAsfB2Gg==}
+    engines: {node: '>=10.13.0'}
+    dependencies:
+      ansi-colors: 1.1.0
     dev: true
 
   /pngjs@3.4.0:
@@ -8427,6 +8428,7 @@ packages:
 
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
+    deprecated: uuid@10 and below is no longer supported.  For ESM codebases, update to uuid@latest.  For CommonJS codebases, use uuid@11 (but be aware this version will likely be deprecated in 2028).
     hasBin: true
     dev: true
 
